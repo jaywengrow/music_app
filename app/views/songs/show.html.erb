@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<div>
+	<p>Title: <%= @song.title %> </p>
+		<p>Genre: <%= @song.genre %></p>
+		<p>Artist: <%= @song.artist %></p>
+	</div>
+	<p> <%= link_to "Edit", "/songs/" + @song.id.to_s + "/edit" %> </p>
+	<p> <%= link_to "Delete", "/songs/" + @song.id.to_s, method: "delete" %> </p>
+	<br>
+	

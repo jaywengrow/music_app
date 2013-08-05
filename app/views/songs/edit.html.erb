@@ -1,0 +1,13 @@
+<%= form_for @song, url: {action: "update", method: 'put'} do |f| %>
+
+		<%= label_tag(:genre, "Genre:") %>
+	  <%= f.text_field :genre %>
+	  <br/>
+	  <%= label_tag(:title, "Title:") %>
+	  <%= f.text_field :title %>
+	  <br/>
+	  <%= label_tag(:artist, "Artist:") %>
+	  <%= f.text_field :artist %>
+	  <br/>
+	  <%= f.submit "Update" %>
+	<% end %>
