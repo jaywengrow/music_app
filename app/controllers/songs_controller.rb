@@ -13,7 +13,7 @@ class SongsController < ApplicationController
 
   def create
   	@song = Song.create(genre: params[:song][:genre], title: params[:song][:title], artist: params[:song][:artist])
-		
+
 		redirect_to @song, notice: 'Song was successfully created.'
   end
 
@@ -35,11 +35,10 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find(params[:id])
-    x = @song
-    x.update_attributes(genre: params[:song][:genre], title: params[:song][:title], artist: params[:song][:artist])
-    
+    @song.update_attributes(genre: params[:song][:genre], title: params[:song][:title], artist: params[:song][:artist])
+
     render :text => "Song Updated!"
-   
+
 
 
     #if @song.update_attributes(params[:song])
@@ -48,15 +47,15 @@ class SongsController < ApplicationController
     #else
     #flash[:error] = "Something went wrong"
     #redirect_to songs_path
-    #end  
+    #end
 
   end
-  
+
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
 
     render :text => "Song destroyed!! BWAHAHAHA!"
   end
-  
+
 end
